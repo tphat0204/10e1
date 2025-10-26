@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #a8edea, #fed6e3); /* Background dịu mắt, pastel */
+    background: linear-gradient(135deg, #85c8c9, #d9a3b9); /* Background dịu hơn, nhẹ hơn, tối hơn một chút: giảm độ sáng và bão hòa */
     color: #333;
     overflow-x: hidden;
     position: relative;
@@ -11,11 +11,11 @@ body {
 
 /* Hiệu ứng liquid glass (glassmorphism) */
 .glass {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15); /* Làm mờ hơn một chút để dịu mắt */
+    backdrop-filter: blur(12px); /* Tăng blur để mềm mại hơn */
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Tăng shadow tối hơn */
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
@@ -39,14 +39,29 @@ header {
     height: 100px;
     border-radius: 50%;
     border: 2px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Tăng shadow tối hơn */
 }
 
 h1 {
     margin: 10px 0;
     font-size: 2em;
     color: #fff;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4); /* Tăng shadow tối hơn */
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* Phần liên hệ và hack game: Màu chữ trắng hết */
+#contact, #hack-game {
+    color: #fff; /* Màu chữ trắng cho toàn bộ phần */
+}
+
+#contact h2, #hack-game h2 {
+    color: #fff; /* Đảm bảo h2 trắng */
 }
 
 /* Phần liên hệ */
@@ -56,24 +71,32 @@ h1 {
 
 .contact-buttons {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Mỗi button một dòng */
+    align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .contact-btn {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.25); /* Làm nền nhẹ hơn, dịu hơn */
     backdrop-filter: blur(5px);
     border: none;
     border-radius: 10px;
-    padding: 10px 20px;
-    color: #333;
+    padding: 15px 30px; /* Làm button lớn hơn */
+    color: #fff; /* Thay đổi màu chữ thành trắng */
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    width: 80%; /* Làm rộng hơn */
+    max-width: 300px;
+    text-align: center;
 }
 
 .contact-btn:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.4); /* Hover nhẹ hơn */
+    transform: scale(1.05); /* Animation hover */
+}
+
+.contact-btn:active {
+    transform: scale(0.95); /* Animation click */
 }
 
 /* Phần hack game */
@@ -81,28 +104,51 @@ h1 {
     text-align: center;
 }
 
-.hack-buttons {
+.hack-items {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    flex-direction: column; /* Mỗi item một dòng */
+    align-items: center;
+    gap: 30px;
+}
+
+.hack-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hack-image {
+    width: 100%;
+    max-width: 640px; /* Ví dụ cho 16:9, 640x360 */
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng shadow tối hơn */
 }
 
 .hack-btn {
-    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    background: linear-gradient(135deg, #e68085, #e6a3b3); /* Màu nhẹ hơn, dịu hơn, tối hơn một chút */
     border: none;
     border-radius: 15px;
-    padding: 15px 30px;
+    padding: 15px 30px; /* Làm lớn hơn */
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Tăng shadow */
+    width: 80%; /* Làm rộng hơn */
+    max-width: 300px;
+    text-align: center;
 }
 
 .hack-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scale(1.05); /* Animation hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Hover shadow tối hơn */
+}
+
+.hack-btn:active {
+    transform: scale(0.95); /* Animation click */
 }
 
 /* Hiệu ứng tuyết rơi */
@@ -111,7 +157,7 @@ h1 {
     top: -10px;
     background: #fff;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.7; /* Làm tuyết rơi dịu hơn */
     animation: fall linear infinite;
     pointer-events: none;
     z-index: 0;
@@ -139,7 +185,11 @@ h1 {
         height: 80px;
     }
 
-    .contact-buttons, .hack-buttons {
-        flex-direction: column;
+    .contact-btn, .hack-btn {
+        width: 100%;
+    }
+
+    .hack-image {
+        max-width: 100%;
     }
 }
