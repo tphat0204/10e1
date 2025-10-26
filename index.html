@@ -1,72 +1,53 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Với Hiệu Ứng Tuyết Rơi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Bio Cá Nhân</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header">Welcome To Website<br>Create By NgTien Phat</div>
-    <div id="container">
-        <textarea id="text-box">Đề 1 - Vật Lí
-Trắc Nghiệm : 
-Câu 1 : C
-Câu 2 : A
-Câu 3 : A
-Câu 4 : B 
-Câu 5 : C
-Câu 6 : B
-Câu 7 : D
-Câu 8 : C
-Câu 9 : C
-Câu 10 : C
-Câu 11 : A
-Câu 12 : C
-Phần 2 : Đúng Sai
-Câu 1 : SDDS
-Câu 2 : DDSS
-Phần 3 : Trả lời ngắn
-Câu 1 : 3,31
-Câu 2 : 48
-Câu 3 : 7
-Câu 4 : 14
-Phần 4 : Tự luận 
-Câu 1 : 1,23%
-Câu 2 : 48
-Câu 3 : 11
-=============
-Đề 2 - Vật Lí
-Trắc Nghiệm : 
-Câu 1 : C
-Câu 2 : B
-Câu 3 : A
-Câu 4 : B 
-Câu 5 : C
-Câu 6 : C
-Câu 7 : D
-Câu 8 : A
-Câu 9 : A
-Câu 10 : D
-Câu 11 : D
-Câu 12 : D
-Phần 2 : Đúng Sai
-Câu 1 : SDDD
-Câu 2 : SSSD
-Phần 3 : Trả lời ngắn
-Câu 1 : 2,25
-Câu 2 : 1,54
-Câu 3 : 20,88
-Câu 4 : 25
-Phần 4 : Tự luận 
-Câu 1 : 2,04
-Câu 2 : 0,833
-Câu 3 : 14</textarea>
-    </div>
-    <canvas id="snow-canvas"></canvas>
+    <header>
+        <img src="avatar.jpg" alt="Avatar" class="avatar"> <!-- Thay bằng link avatar thực tế -->
+        <h1>Tên Của Bạn</h1> <!-- Thay bằng tên thực tế -->
+    </header>
 
-    <script src="script.js"></script>
+    <section id="contact" class="glass">
+        <h2>Liên Hệ</h2>
+        <div class="contact-buttons">
+            <a href="https://t.me/yourusername" class="contact-btn">Telegram</a> <!-- Thay bằng link thực tế -->
+            <a href="zalo://yourid" class="contact-btn">Zalo</a> <!-- Thay bằng link thực tế -->
+        </div>
+    </section>
+
+    <section id="hack-game" class="glass">
+        <h2>Hack Game</h2>
+        <div class="hack-buttons">
+            <a href="link1" class="hack-btn">Button 1</a> <!-- Thay bằng link và tên thực tế -->
+            <a href="link2" class="hack-btn">Button 2</a>
+            <a href="link3" class="hack-btn">Button 3</a>
+            <!-- Thêm nhiều button nếu cần -->
+        </div>
+    </section>
+
+    <script>
+        // JavaScript cho hiệu ứng tuyết rơi
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5 giây
+            snowflake.style.width = Math.random() * 5 + 5 + 'px';
+            snowflake.style.height = snowflake.style.width;
+            snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000); // Xóa sau 5 giây
+        }
+
+        setInterval(createSnowflake, 100); // Tạo bông tuyết mới mỗi 100ms
+    </script>
 </body>
 </html>
